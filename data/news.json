@@ -1,0 +1,11 @@
+[
+  {
+    "id": "news_1",
+    "title": "Selamat Datang",
+    "message": "Sistem chat telah diinisialisasi. Ini pengumuman contoh untuk admin.",
+    "startAt": null,
+    "endAt": null,
+    "dismissible": true,
+    "createdAt": "2026-01-04T00:00:00.000Z"
+  }
+]

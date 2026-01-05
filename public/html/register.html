@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - Chat App</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>Daftar</h1>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn">Daftar</button>
+            </form>
+            <p class="login-link">
+                Sudah punya akun? <a href="/html/login.html">Login disini</a>
+            </p>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <script src="/js/register.js"></script>
+    <script src="/js/news.js"></script>
+</body>
+</html>

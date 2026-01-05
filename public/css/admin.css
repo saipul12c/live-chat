@@ -1,0 +1,133 @@
+.root-font { font-family: Inter, 'Segoe UI', Roboto, -apple-system, 'Helvetica Neue', Arial; }
+:root{
+	--bg:#f5f7fb;
+	--panel:#ffffff;
+	--muted:#7a8594;
+	--accent:#2b7cff;
+	--danger:#e74c3c;
+	--border:#e6e9ef;
+	--glass: rgba(255,255,255,0.6);
+}
+
+/* Layout */
+.container { display:flex; min-height:100vh; background:var(--bg); }
+.sidebar { width:280px; background:linear-gradient(180deg,#1f2a44 0%, #172034 100%); color:#ecf0f1; padding:16px; box-sizing:border-box; }
+.chat-area { flex:1; padding:0; display:flex; flex-direction:column; overflow:auto; }
+
+/* Sidebar header */
+.sidebar-header { display:flex; flex-direction:column; gap:12px; }
+.sidebar-header h2 { margin:0; font-size:20px; letter-spacing:0.2px; }
+.user-info { display:flex; align-items:center; gap:8px; justify-content:space-between }
+.user-info #adminName { font-weight:600 }
+.btn-logout { background:transparent; border:1px solid rgba(255,255,255,0.12); color:inherit; padding:6px 10px; border-radius:6px; cursor:pointer }
+.btn-logout:hover { background:rgba(255,255,255,0.04) }
+
+/* Chat area */
+.chat-header { padding:16px 20px; border-bottom:1px solid var(--border); background:linear-gradient(90deg, #fff, #fbfdff); }
+.chat-header h3 { margin:0; font-size:18px }
+.chat-area > div { background:var(--panel) }
+
+/* Sections */
+.panel { padding:16px; border-top:1px solid var(--border); box-sizing:border-box }
+.panel h3 { margin:0 0 12px 0 }
+
+/* Forms and controls */
+input, textarea, select { font-family:inherit; border:1px solid var(--border); padding:8px 10px; border-radius:6px; outline:none; background:white; color:#222; box-sizing:border-box }
+input:focus, textarea:focus, select:focus { border-color:var(--accent); box-shadow:0 4px 14px rgba(43,124,255,0.08) }
+input[readonly], textarea[readonly] { background:#fafbfc }
+button { cursor:pointer; background:var(--accent); color:#fff; border:0; padding:8px 12px; border-radius:6px; font-weight:600 }
+button.btn { background:var(--accent) }
+button.secondary { background:#f3f5f8; color:#222; border:1px solid var(--border) }
+.btn-small { padding:6px 8px; font-size:13px }
+
+.controls { display:flex; gap:8px; align-items:center }
+
+/* Pre blocks and lists */
+pre { background:#fff; padding:10px; border:1px solid var(--border); border-radius:6px; font-size:13px; color:#222; overflow:auto }
+
+/* Grid of admin tools */
+.tools-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px }
+.tools-grid .card { background:var(--panel); padding:12px; border:1px solid var(--border); border-radius:8px }
+
+/* Card header with small action */
+.card-header { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px }
+.card-header h4 { margin:0; font-size:15px }
+.toggle { background:#f3f5f8; color:#222; border:1px solid var(--border); padding:6px 8px; border-radius:6px }
+
+/* Stats row */
+.stats-row { display:flex; gap:12px; padding:12px; align-items:stretch }
+.stat-card { background:linear-gradient(180deg,#fff,#fbfdff); padding:12px; border:1px solid var(--border); border-radius:10px; flex:1; text-align:center }
+.stat-value { font-size:20px; font-weight:700; color:var(--accent) }
+.stat-label { font-size:13px; color:var(--muted) }
+
+/* Panel list displays for compact previews */
+.panel-list > div { border-bottom:1px solid var(--border); padding:8px }
+
+/* Users table improvements */
+.users-table img { border-radius:50% }
+.users-table tr:hover { background:#fafbff }
+
+/* Small tweaks for header */
+.header-left { display:flex; flex-direction:column }
+.header-actions { display:flex; gap:8px; align-items:center }
+
+/* Secondary button appearance */
+.secondary { background:#f3f5f8; color:#222; border:1px solid var(--border); padding:8px 10px; border-radius:6px }
+
+/* Make toggles keyboard accessible look */
+.toggle:focus { outline:2px solid rgba(0,0,0,0.06) }
+
+/* Responsive: stack stats */
+@media (max-width:900px){ .stats-row { flex-direction:column } .tools-grid{ grid-template-columns:1fr } }
+
+/* Wide area for privacy/terms */
+.wide { grid-column:1 / -1 }
+
+/* Tables */
+#usersTable { width:100%; border-collapse:collapse; background:transparent }
+#usersTable tr { border-bottom:1px solid var(--border) }
+#usersTable td, #usersTable th { padding:10px; vertical-align:middle }
+#usersTable th { text-align:left; background:transparent; color:var(--muted); font-weight:600 }
+
+/* Buttons used across UI */
+.btn-set-role, .btn-chat { margin-left:6px; padding:6px 8px; border-radius:6px; font-size:13px }
+.btn-set-role { background:#f3f5f8; color:#222; border:1px solid var(--border) }
+.btn-chat { background:transparent; border:1px solid var(--border); color:#222 }
+
+/* Modal */
+#modal { display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:1000 }
+#modal.show { display:flex }
+#modalContent { background:var(--panel); max-width:900px; width:90%; max-height:80%; overflow:auto; padding:20px; border-radius:8px }
+
+/* Responsive */
+@media (max-width:900px){ .sidebar{ display:none } .chat-area{ padding:12px; overflow:auto } .tools-grid{ grid-template-columns:1fr } }
+
+/* Small utilities */
+.muted { color:var(--muted); font-size:13px }
+.label { font-weight:600; margin-bottom:6px; display:block }
+
+/* Make inline-styled panels look consistent */
+.chat-area > div[style], .sidebar > div[style] { background:transparent }
+
+/* Accessibility focus rings for keyboard users */
+button:focus, a:focus, input:focus, textarea:focus { box-shadow:0 0 0 3px rgba(43,124,255,0.12); }
+
+/* Keep small existing class names working */
+.btn-set-role { display:inline-block }
+.btn-chat { display:inline-block }
+
+/* Utility classes used by HTML */
+.sidebar-desc { padding:12px; color:var(--panel); opacity:0.95 }
+.panel { padding:16px; border-top:1px solid var(--border); box-sizing:border-box }
+.stack { display:flex; flex-direction:column; gap:8px }
+.form-row { display:flex; gap:8px; align-items:center }
+.full-width { width:100% }
+.input-large { width:60% }
+.input-small { width:35% }
+.card-list { background:#fff; padding:8px; border:1px solid var(--border); height:120px; overflow:auto; border-radius:6px }
+.mt-8 { margin-top:8px }
+.mt-6 { margin-top:6px }
+.two-column { display:flex; gap:12px }
+.two-column > div { flex:1 }
+
+

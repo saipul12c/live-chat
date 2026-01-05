@@ -1,0 +1,8 @@
+[
+	{
+		"id": "plugin_example",
+		"name": "example-plugin",
+		"enabled": false,
+		"description": "Plugin contoh — dinonaktifkan secara default"
+	}
+]

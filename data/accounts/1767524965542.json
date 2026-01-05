@@ -1,0 +1,19 @@
+{
+  "id": "1767524965542",
+  "username": "superadmin@local",
+  "password": "$2b$10$zhHEO2M2ET8cKl/ar6zDPuLxLdZ0JiJqYBJH4Ov/udcu.1rnJxVAi",
+  "name": "Super Admin",
+  "role": "superadmin",
+  "createdAt": "2026-01-04T00:00:00.000Z",
+  "avatar": null,
+  "verification": {
+    "method": "email",
+    "verified": true
+  },
+  "business": null,
+  "blockedUsers": [],
+  "retentionPolicy": {
+    "days": 365
+  },
+  "messages": []
+}

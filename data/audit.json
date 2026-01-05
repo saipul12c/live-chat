@@ -1,0 +1,258 @@
+[
+  {
+    "id": "audit_1",
+    "event": "system_init",
+    "message": "Inisialisasi data awal",
+    "createdAt": "2026-01-04T00:00:00.000Z",
+    "meta": {}
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767531444596",
+    "timestamp": "2026-01-04T12:57:24.596Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767531602675",
+    "timestamp": "2026-01-04T13:00:02.675Z"
+  },
+  {
+    "actor": "testuser",
+    "actorId": "1767531809621",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767531810147",
+    "timestamp": "2026-01-04T13:03:30.147Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767532409618",
+    "timestamp": "2026-01-04T13:13:29.618Z"
+  },
+  {
+    "actor": "ucup1@gmail.com",
+    "actorId": "1767532540026",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767532545838",
+    "timestamp": "2026-01-04T13:15:45.838Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767532567974",
+    "timestamp": "2026-01-04T13:16:07.974Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767533310919",
+    "timestamp": "2026-01-04T13:28:30.919Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767535330939",
+    "timestamp": "2026-01-04T14:02:10.939Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767535374564",
+    "timestamp": "2026-01-04T14:02:54.564Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767535491026",
+    "timestamp": "2026-01-04T14:04:51.027Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767535908668",
+    "timestamp": "2026-01-04T14:11:48.668Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767535994335",
+    "timestamp": "2026-01-04T14:13:14.335Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767536769928",
+    "timestamp": "2026-01-04T14:26:09.928Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767536806057",
+    "timestamp": "2026-01-04T14:26:46.057Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767537131195",
+    "timestamp": "2026-01-04T14:32:11.195Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767537281744",
+    "timestamp": "2026-01-04T14:34:41.744Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767537342023",
+    "timestamp": "2026-01-04T14:35:42.023Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767537432765",
+    "timestamp": "2026-01-04T14:37:12.765Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767537693755",
+    "timestamp": "2026-01-04T14:41:33.755Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767538136303",
+    "timestamp": "2026-01-04T14:48:56.304Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "action": "save-terms",
+    "detail": {
+      "id": "1767529583069"
+    },
+    "id": "1767538147217",
+    "timestamp": "2026-01-04T14:49:07.217Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767538355487",
+    "timestamp": "2026-01-04T14:52:35.487Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767571994623",
+    "timestamp": "2026-01-05T00:13:14.623Z"
+  },
+  {
+    "actor": "Cortex@gmail.com",
+    "actorId": "1767527408166",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767575728533",
+    "timestamp": "2026-01-05T01:15:28.533Z"
+  },
+  {
+    "actor": "sasasas@gmail.com",
+    "actorId": "1767529583069",
+    "action": "login",
+    "detail": {
+      "ip": "::1"
+    },
+    "id": "1767575755945",
+    "timestamp": "2026-01-05T01:15:55.945Z"
+  }
+]

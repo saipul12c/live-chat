@@ -1,0 +1,57 @@
+{
+  "id": "1767529583069",
+  "username": "sasasas@gmail.com",
+  "password": "$2b$10$qBbhJGfu/hyVKghJN1VYJO59SvkuSJDJ0B7QBUINDVk9SqqtER4x2",
+  "name": "sasasas@gmail.com",
+  "role": "owner",
+  "createdAt": "2026-01-04T00:10:00.000Z",
+  "avatar": null,
+  "verification": {
+    "method": "email",
+    "verified": true
+  },
+  "business": {
+    "companyName": "Owner Co",
+    "description": "Contoh bisnis owner",
+    "contact": "owner@example.com"
+  },
+  "blockedUsers": [],
+  "retentionPolicy": {
+    "days": 180
+  },
+  "messages": [
+    {
+      "id": "1767537415212",
+      "senderId": "1767527408166",
+      "senderName": "Cortex@gmail.com",
+      "receiverId": "1767529583069",
+      "content": "0tqIXBQFMRsy+/aph4Z00SHlpjVXdvBCeey9yfAGaMEd",
+      "isEncrypted": true,
+      "replyTo": null,
+      "timestamp": "2026-01-04T14:36:55.212Z",
+      "isRead": false
+    },
+    {
+      "id": "1767537419045",
+      "senderId": "1767527408166",
+      "senderName": "Cortex@gmail.com",
+      "receiverId": "1767529583069",
+      "content": "5rYTitSOKe2yFBDeWDmOJ7vqXU9Eo+UDw8i+6kJjXVDo",
+      "isEncrypted": true,
+      "replyTo": null,
+      "timestamp": "2026-01-04T14:36:59.045Z",
+      "isRead": false
+    },
+    {
+      "id": "1767575747315",
+      "senderId": "1767527408166",
+      "senderName": "Cortex@gmail.com",
+      "receiverId": "1767529583069",
+      "content": "hallo",
+      "isEncrypted": false,
+      "replyTo": null,
+      "timestamp": "2026-01-05T01:15:47.315Z",
+      "isRead": false
+    }
+  ]
+}

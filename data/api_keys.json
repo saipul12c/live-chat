@@ -1,0 +1,11 @@
+[
+	{
+		"id": "key_1",
+		"name": "default-admin-key",
+		"key": "REPLACE_WITH_REAL_KEY",
+		"scopes": ["admin","read","write"],
+		"enabled": true,
+		"createdAt": "2026-01-04T00:00:00.000Z",
+		"notes": "Kunci contoh — ganti saat produksi"
+	}
+]

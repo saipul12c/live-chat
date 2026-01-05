@@ -1,0 +1,9 @@
+[
+	{
+		"id": "sla_default",
+		"name": "Default SLA",
+		"uptime": "99.9%",
+		"responseTimeMs": 200,
+		"notes": "SLA contoh untuk operasi dasar"
+	}
+]

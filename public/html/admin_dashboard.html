@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Dashboard</h2>
+        <div class="user-info">
+          <span id="adminName">Loading...</span>
+          <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+      </div>
+      <div class="sidebar-desc">Kelola pengguna dan obrolan</div>
+    </div>
+    <div class="chat-area">
+      <div class="chat-header">
+        <div class="header-left">
+          <h3>Dashboard Admin</h3>
+          <p class="muted small">Ringkasan cepat dan alat manajemen untuk Super Admin & Owner</p>
+        </div>
+        <div class="header-actions">
+          <button id="refreshAll" class="btn btn-small">Refresh Semua</button>
+        </div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="panel stats-row">
+        <div class="stat-card">
+          <div class="stat-value" id="statUsers">—</div>
+          <div class="stat-label">Total Pengguna</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statActiveSessions">—</div>
+          <div class="stat-label">Sesi Aktif</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statBackups">—</div>
+          <div class="stat-label">Backups</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statPendingApprovals">—</div>
+          <div class="stat-label">Menunggu Approval</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Pengumuman / News</h3>
+        <div class="stack">
+          <input id="newsTitle" class="full-width" placeholder="Judul singkat">
+          <textarea id="newsMessage" class="full-width" placeholder="Pesan singkat (akan tampil di halaman utama)" rows="3"></textarea>
+          <div class="controls">
+            <input type="datetime-local" id="newsStart"> <small class="muted">Mulai (opsional)</small>
+            <input type="datetime-local" id="newsEnd"> <small class="muted">Akhir (opsional)</small>
+            <label style="margin-left:8px"><input type="checkbox" id="newsDismissible"> Dismissible</label>
+          </div>
+          <div class="mt-8">
+            <button id="createNewsBtn" class="btn">Buat Pengumuman</button>
+          </div>
+        </div>
+        <div id="newsList" class="panel-list"></div>
+      </div>
+      <div class="panel">
+        <h3>Admin Tools</h3>
+        <div class="tools-grid">
+          <div class="card">
+            <div class="card-header">
+              <h4>Feature Flags</h4>
+              <button class="btn-small toggle" data-target="flagsList">Tampilkan</button>
+            </div>
+            <div class="form-row"><input id="flagKey" class="input-large" placeholder="flag.key"><input id="flagVal" class="input-small" placeholder="value"><button id="saveFlag">Simpan</button></div>
+            <pre id="flagsList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Member Features (Member Tier)</h4>
+              <button class="btn-small toggle" data-target="memberFeaturesPanel">Tampilkan</button>
+            </div>
+            <div id="memberFeaturesPanel" style="display:none;padding:8px">
+              <div id="memberFeaturesList" class="card-list" style="max-height:240px;overflow:auto;border:1px solid #f1f1f1;padding:8px;background:#fff"></div>
+              <div style="margin-top:8px;text-align:right"><button id="saveMemberFeaturesBtn" class="btn">Simpan Perubahan</button></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Admin Features</h4>
+              <button class="btn-small toggle" data-target="adminFeaturesPanel">Tampilkan</button>
+            </div>
+            <div id="adminFeaturesPanel" style="display:none;padding:8px">
+              <div id="adminFeaturesList" class="card-list" style="max-height:240px;overflow:auto;border:1px solid #f1f1f1;padding:8px;background:#fff"></div>
+              <div style="margin-top:8px;text-align:right"><button id="saveAdminFeaturesBtn" class="btn">Simpan Perubahan</button></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>API Keys</h4>
+              <button class="btn-small toggle" data-target="apiKeysList">Tampilkan</button>
+            </div>
+            <div class="form-row"><input id="apiOwner" class="input-large" placeholder="ownerId"><input id="apiScopes" class="input-small" placeholder="scopes csv"><button id="createApiKey">Buat</button></div>
+            <pre id="apiKeysList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>IP Allowlist</h4>
+              <button class="btn-small toggle" data-target="ipAllowList">Tampilkan</button>
+            </div>
+            <div class="stack"><textarea id="ipAllowText" class="full-width" placeholder="one ip per line" rows="4"></textarea><button id="saveIpAllow">Simpan</button></div>
+            <pre id="ipAllowList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <h4>Retention Editor</h4>
+            <div class="form-row"><input id="retUserId" class="input-large" placeholder="userId"><input id="retDays" class="input-small" placeholder="days"><button id="saveRetention">Simpan</button></div>
+            <small class="muted">Atur kebijakan retensi per user (hari)</small>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Approvals (2-person)</h4>
+              <button class="btn-small toggle" data-target="approvalsList">Tampilkan</button>
+            </div>
+            <div class="form-row"><input id="apprAction" class="input-large" placeholder="action (delete-user, ban-user)"><input id="apprTarget" class="input-small" placeholder="target userId"><button id="createApproval">Buat Request</button></div>
+            <pre id="approvalsList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <h4>Impersonation</h4>
+            <div class="form-row"><input id="impersonateUserId" class="input-large" placeholder="userId"><button id="impersonateBtn">Masuk sebagai</button><button id="stopImpersonateBtn">Kembali</button></div>
+            <small class="muted">Hanya Super Admin</small>
+          </div>
+          <div class="card wide">
+            <h4>Broadcast / Scheduler</h4>
+            <div class="stack">
+              <textarea id="broadcastContent" class="full-width" placeholder="Isi broadcast atau pesan terjadwal..." rows="3"></textarea>
+              <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+                <input id="scheduleAt" type="datetime-local"> <button id="sendBroadcastBtn" class="btn">Kirim Sekarang</button>
+                <button id="scheduleMsgBtn" class="btn">Jadwalkan</button>
+              </div>
+              <small class="muted">Gunakan "Kirim Sekarang" untuk broadcast langsung ke semua pengguna, atau "Jadwalkan" untuk pesan terjadwal (pilih waktu).</small>
+            </div>
+            <div id="scheduledList" style="margin-top:8px;max-height:160px;overflow:auto;border-top:1px solid #eee;padding-top:8px"></div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Sessions</h4>
+              <button class="btn-small toggle" data-target="sessionsList">Tampilkan</button>
+            </div>
+            <div><button id="refreshSessions">Refresh</button></div>
+            <pre id="sessionsList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Backups</h4>
+              <button class="btn-small toggle" data-target="backupsList">Tampilkan</button>
+            </div>
+            <div class="form-row"><input id="backupName" class="input-large" placeholder="nama"><button id="createBackupBtn">Buat Backup</button></div>
+            <pre id="backupsList" class="card-list" style="display:none"></pre>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Marketplace / Manager</h3>
+        <div class="tools-grid">
+          <div class="card">
+            <div class="card-header"><h4>Plugins</h4><button class="btn-small toggle" data-target="pluginsList">Tampilkan</button></div>
+            <div class="form-row"><input id="pluginName" class="input-large" placeholder="plugin name"><button id="savePlugin">Simpan</button></div>
+            <pre id="pluginsList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header"><h4>SLAs</h4><button class="btn-small toggle" data-target="slasList">Tampilkan</button></div>
+            <div class="form-row"><input id="slaName" class="input-large" placeholder="sla name"><button id="saveSla">Simpan</button></div>
+            <pre id="slasList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header"><h4>Templates</h4><button class="btn-small toggle" data-target="templatesList">Tampilkan</button></div>
+            <div class="form-row"><input id="templateName" class="input-large" placeholder="template title"><button id="saveTemplate">Simpan</button></div>
+            <pre id="templatesList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <div class="card-header"><h4>Audit Viewer</h4><button class="btn-small toggle" data-target="auditList">Tampilkan</button></div>
+            <div><button id="refreshAudit">Refresh</button></div>
+            <pre id="auditList" class="card-list" style="display:none"></pre>
+          </div>
+          <div class="card">
+            <h4>2FA Manager</h4>
+            <div class="form-row"><input id="2faUserId" class="input-large" placeholder="userId"><input id="2faSecret" class="input-small" placeholder="secret (plain)"></div>
+            <div class="mt-6"><label><input type="checkbox" id="2faEnable"> Enable</label> <button id="set2fa">Set</button> <button id="generate2fa">Generate & QR</button></div>
+            <small class="muted">Simple 2FA scaffold: secret is stored in plain text (for demo).</small>
+          </div>
+          <div class="card wide">
+            <h4>Privacy & Terms</h4>
+            <div class="two-column">
+              <div>
+                <strong>Privacy Policy</strong>
+                <textarea id="privacyEditor" class="full-width" rows="6" placeholder="Konten privacy policy..."></textarea>
+                <div class="mt-6"><button id="savePrivacyBtn">Simpan Privacy</button> <button id="delPrivacyBtn" class="secondary">Hapus</button></div>
+              </div>
+              <div>
+                <strong>Terms of Service</strong>
+                <textarea id="termsEditor" class="full-width" rows="6" placeholder="Konten terms of service..."></textarea>
+                <div class="mt-6"><button id="saveTermsBtn">Simpan Terms</button> <button id="delTermsBtn" class="secondary">Hapus</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <table id="usersTable" class="users-table"></table>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for viewing messages -->
+  <div id="modal">
+    <div id="modalContent"></div>
+  </div>
+  <script src="/js/admin.js"></script>
+  <script src="/js/news.js"></script>
+</body>
+</html>

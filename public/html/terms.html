@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms of Service</title>
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+  <div style="max-width:900px;margin:24px auto;padding:16px;background:#fff;border-radius:6px">
+    <h1>Terms of Service</h1>
+    <div id="content">Loading...</div>
+  </div>
+  <script>
+    async function load(){
+      try{const res=await fetch('/api/policy/terms');if(!res.ok)throw new Error('fail');const d=await res.json();document.getElementById('content').innerHTML = d.content || '<p>No terms set.</p>'; }catch(e){document.getElementById('content').textContent='Failed to load terms.'}
+    }
+    load();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+	{
+		"id": "welcome_email",
+		"type": "email",
+		"subject": "Selamat datang di Room Chat",
+		"body": "Halo {{name}},\n\nTerima kasih telah mendaftar di Room Chat. Selamat berinteraksi!\n\nSalam,\nTim Room Chat"
+	},
+	{
+		"id": "reset_password",
+		"type": "email",
+		"subject": "Permintaan Reset Kata Sandi",
+		"body": "Halo {{name}},\n\nUntuk mereset kata sandi Anda, klik tautan berikut: {{reset_link}}\n\nJika Anda tidak meminta ini, abaikan pesan ini.\n\nSalam,\nTim Room Chat"
+	}
+]

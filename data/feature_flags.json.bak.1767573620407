@@ -1,0 +1,31 @@
+{
+  "registration": true,
+  "maintenanceMode": false,
+  "betaFeatures": false,
+  "memberFeatures": {
+    "readReceipts": true,
+    "messageReactions": true,
+    "editMessages": false,
+    "deleteMessages": false,
+    "imageUpload": true,
+    "fileSharing": false,
+    "voiceMessages": false,
+    "typingIndicators": true,
+    "onlinePresence": true,
+    "customStatus": true,
+    "profileThemes": false,
+    "emojiPicker": true,
+    "pinMessages": false,
+    "chatSearch": true,
+    "messageThreads": false,
+    "autoTranslate": false,
+    "scheduledMessages": false,
+    "darkMode": true,
+    "profileBadges": false,
+    "favoritesList": true,
+    "mentionAlerts": true,
+    "limitedApiAccess": false,
+    "quickShareShortcuts": true,
+    "prioritySupportBadge": false
+  }
+}

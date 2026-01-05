@@ -1,0 +1,11 @@
+[
+	{
+		"id": "approval_1",
+		"type": "account_creation",
+		"accountId": "1767524965542",
+		"status": "approved",
+		"requestedAt": "2026-01-04T00:00:00.000Z",
+		"approvedAt": "2026-01-04T00:00:00.000Z",
+		"admin": "system"
+	}
+]

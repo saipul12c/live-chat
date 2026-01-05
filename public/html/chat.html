@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/crypto.js"></script>
+    <script src="/js/news.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar untuk daftar user -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Chat App</h2>
+                <div class="user-info">
+                    <span id="currentUserName">Loading...</span>
+                    <div class="user-actions">
+                        <button id="profileBtn" class="btn-profile">Profil</button>
+                        <button id="logoutBtn" class="btn-logout">Logout</button>
+                        <button id="dashboardBtn" class="btn-dashboard" style="display:none;margin-left:8px;">Dashboard</button>
+                        <a id="privacyBtn" class="btn-privacy" href="/html/privacy.html" title="Privacy Policy">Privacy</a>
+                        <a id="termsBtn" class="btn-terms" href="/html/terms.html" title="Terms of Service">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:12px 16px;border-bottom:1px solid #34495e;">
+                <input id="userSearchInput" placeholder="Cari pengguna..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #2c3e50;background:#fff;color:#222;" />
+            </div>
+            <div class="sidebar-section" id="supportSection">
+                <h3>Support Contact</h3>
+                <ul id="supportList">
+                    <!-- Support accounts (superadmin + owner) -->
+                </ul>
+            </div>
+
+            <div class="sidebar-section" id="businessSection">
+                <h3>Bisnis Akun</h3>
+                <ul id="businessList">
+                    <!-- Business accounts (ranked by incoming chats) -->
+                </ul>
+            </div>
+
+            <div class="users-list" id="onlineSection">
+                <h3>Online Users</h3>
+                <ul id="usersList">
+                    <!-- Online users akan dimuat via JS dan update realtime -->
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Area chat utama -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h3 id="chatWithUser">Pilih user untuk memulai chat</h3>
+                <button id="deleteChatBtn" class="btn-delete-chat">Hapus Obrolan</button>
+            </div>
+            
+            <div class="messages-container" id="messagesContainer">
+                <!-- Pesan akan ditampilkan di sini -->
+            </div>
+            
+            <div class="message-input">
+                <div id="replyPreview" style="display:none;padding:6px;background:#f1f1f1;border-radius:4px;margin-bottom:6px;">
+                    <span id="replyText"></span>
+                    <button id="cancelReplyBtn" style="margin-left:8px;">Batal</button>
+                </div>
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Ketik pesan di sini..." 
+                    disabled
+                >
+                <input type="file" id="imageInput" accept="image/*" style="display:none;margin-left:8px;" />
+                <button id="attachImageBtn" class="btn-attach" title="Lampirkan gambar" style="display:none;margin-left:8px;">📷</button>
+                <input type="datetime-local" id="scheduleAt" style="display:none;margin-left:8px;" />
+                <button id="scheduleMsgBtn" class="btn-schedule" title="Jadwalkan pesan" style="display:none;margin-left:8px;">⏰</button>
+                <button id="sendBtn" class="btn-send" disabled>Kirim</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/chat.js"></script>
+</body>
+</html>

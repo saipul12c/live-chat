@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Chat App</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-box">
+            <h1>Profil</h1>
+            <form id="profileForm">
+                <div class="avatar-group">
+                    <img id="avatarPreview" src="/images/default-avatar.svg" alt="Avatar" class="avatar-img">
+                    <div>
+                        <label for="avatarInput">Ganti Avatar</label>
+                        <input type="file" id="avatarInput" accept="image/*">
+                        <div class="small">Maks 1MB. Format: PNG/JPEG.</div>
+                    </div>
+                    <div id="profileBadge" style="margin-left:8px;display:none;">
+                        <span id="profileBadgeIcon" class="user-badge"></span>
+                    </div>
+                </div>
+                <div id="badgeInfoPopup" style="display:none; position:relative;"></div>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" disabled>
+                </div>
+                <div class="input-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div id="businessSection" style="display:none; border-top:1px solid #eee; padding-top:10px; margin-top:8px;">
+                    <h4>Informasi Bisnis</h4>
+                    <div class="input-group">
+                        <label for="companyName">Nama Bisnis</label>
+                        <input type="text" id="companyName" name="companyName">
+                    </div>
+                    <div class="input-group">
+                        <label for="businessDesc">Deskripsi Singkat</label>
+                        <input type="text" id="businessDesc" name="businessDesc">
+                    </div>
+                    <div class="input-group">
+                        <label for="businessContact">Kontak</label>
+                        <input type="text" id="businessContact" name="businessContact">
+                    </div>
+                </div>
+                <div id="passwordFields">
+                    <div class="input-group">
+                        <label for="password">Password Baru (opsional)</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                </div>
+                <div class="input-group" style="margin-top:8px;">
+                    <label for="darkModeToggle">Tema Gelap</label>
+                    <label style="margin-left:8px"><input type="checkbox" id="darkModeToggle"/> Aktifkan Dark Mode</label>
+                </div>
+                <button type="submit" id="saveBtn" class="btn">Simpan</button>
+            </form>
+            <p class="back-link">
+                <a href="/chat.html">Kembali ke Chat</a>
+            </p>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <script src="/js/profile.js"></script>
+    <script src="/js/news.js"></script>
+</body>
+</html>
